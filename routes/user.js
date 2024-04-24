@@ -1,7 +1,7 @@
 const express = require("express");
 const User = require('../models/user')
 const router = express.Router();
-const { getAllUsers, createUser, getSingleUser, getUserByQuery } = require('../controllers/user')
+const { getAllUsers, createUser, getSingleUser, getUserByQuery, deleteUser, updateUser } = require('../controllers/user')
 
 // GET ALL USERS
 router.get('/', getAllUsers);
@@ -11,18 +11,12 @@ router.get('/email', getUserByQuery);
 router.post('/', createUser);
 
 // GET SINGLE USER
-router.get('/:id', (req, res) => {
-  res.json({ mssg: "GET single user" })
-});
+router.get('/:id', getSingleUser);
 
 // DELETE SINGLE USER
-router.delete('/:id', (req, res) => {
-  res.json({ mssg: "DELETE single user" })
-});
+router.delete('/:id', deleteUser);
 
 // UPDATE SINGE USER
-router.patch('/:id', (req, res) => {
-  res.json({ mssg: "UPDATE single user" })
-});
+router.patch('/:id', updateUser);
 
 module.exports = router;
