@@ -1,0 +1,19 @@
+{
+  "name": "capstone-schoolbase-server",
+  "version": "1.0.0",
+  "description": "Server for Schoolbase LMS application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Osezele Iboi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.2"
+  }
+}
