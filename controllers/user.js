@@ -22,10 +22,10 @@ const getUserByQuery = async (req, res) => {
 
 // POST a single user
 const createUser = async (req, res) => {
-  const { email, username, firstname, surname, school, address, password } = req.body
+  const { email, username, firstname, surname, school, address, role } = req.body
 
   try {
-    const user = await User.create({ email, username, firstname, surname, school, address, password })
+    const user = await User.create({ email, username, firstname, surname, school, address, role })
     res.status(200).json(user)
   } catch (err) {
     res.status(500).json({ error: err.message });
